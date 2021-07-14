@@ -1,26 +1,18 @@
 <template>
   <div>
-    <panel></panel>
+    <setting> </setting>
+    <sidebar></sidebar>
   </div>
 </template>
 
 <script lang="ts">
-import Panel from './components/panel.vue';
-import {
-  ref,
-  reactive,
-  computed,
-  toRefs,
-  watch,
-  watchEffect,
-  onMounted,
-  onBeforeMount,
-  onBeforeUnmount,
-} from 'vue';
+import Setting from './components/setting.vue';
+import Sidebar from './components/sidebar/index.vue';
 export default {
   name: 'layout',
   components: {
-    Panel,
+    Setting,
+    Sidebar,
   },
 };
 </script>

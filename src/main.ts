@@ -12,5 +12,9 @@ import './style/index.scss'
 import "./assets/iconfont/iconfont.js"
 import "./assets/iconfont/iconfont.css"
 
+// 内置vxe-table
+import 'xe-utils'
+import VXETable from 'vxe-table'
+import 'vxe-table/lib/style.css'
 
-createApp(App).use(router).use(store).use(ElementPlus).mount('#app');
+createApp(App).use(router).use(store).use(ElementPlus).use(VXETable).mount('#app');
