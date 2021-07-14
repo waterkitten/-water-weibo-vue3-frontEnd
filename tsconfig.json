@@ -1,18 +1,45 @@
 {
-  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"],
   "compilerOptions": {
-    "jsx": "preserve",
     "target": "esnext",
     "module": "esnext",
-    "sourceMap": true,
-    "outDir": "./dist",
-    "lib": ["esnext", "dom"],
-    "types": ["vite/client", "node"],
-    "strict": true,
-    "noUnusedLocals": true,
-    "noImplicitReturns": true,
+    "strict": false,
+    "jsx": "preserve",
+    "importHelpers": true,
     "moduleResolution": "node",
+    "experimentalDecorators": true,
+    "skipLibCheck": true,
     "esModuleInterop": true,
-    "plugins": [{ "name": "@vuedx/typescript-plugin-vue" }]
-  }
+    "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true,
+    "sourceMap": true,
+    "baseUrl": ".",
+    "allowJs": true,
+    "resolveJsonModule": true, // 包含导入的模块。json的扩展
+    "lib": [
+      "dom",
+      "esnext"
+    ],
+    "incremental": true,
+    "paths": {
+      "/@/*": [
+        "src/*"
+      ]
+    },
+    "types": ["node"],
+    "typeRoots": [
+      "node_modules/@types"
+    ],
+  },
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "src/**/*.vue",
+    "tests/**/*.ts",
+    "src/utils/path.js"    
+  ],
+  "exclude": [
+    "node_modules",
+    "dist",
+    "**/*.js"
+  ],
 }

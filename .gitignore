@@ -1,6 +1,4 @@
-node_modules
+/node_modules
+/dist
 .DS_Store
-dist
-*.local
-package-lock.json
-yarn.lock
+src/.DS_Store
