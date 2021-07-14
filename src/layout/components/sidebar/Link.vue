@@ -3,24 +3,26 @@
     <slot />
   </component>
 </template>
+
 <script>
-import { defineComponent } from 'vue';
+import { computed, defineComponent } from "vue";
+
 export default defineComponent({
-  name: 'Link',
+  name: "Link",
   props: {
     to: {
       type: String,
-      require: true,
+      required: true,
     },
   },
   setup(props) {
     const linkProps = (to) => {
       return {
-        to,
+        to: to,
       };
     };
     return {
-      type: 'router-link',
+      type: "router-link",
       linkProps,
     };
   },

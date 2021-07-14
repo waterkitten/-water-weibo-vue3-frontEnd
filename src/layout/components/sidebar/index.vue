@@ -19,20 +19,24 @@
     </el-menu>
   </el-scrollbar>
 </template>
+
 <script lang="ts">
-import { defineComponent, computed } from 'vue';
-import { useRoute, useRouter } from 'vue-router';
-import { useStore } from 'vuex';
-import SidebarItem from './SidebarItem.vue';
-import { algorithm } from '../../../utils/algorithm';
+import { computed, defineComponent } from "vue";
+import { useRoute, useRouter } from "vue-router";
+import { useStore } from "vuex";
+import SidebarItem from "./SidebarItem.vue";
+import { algorithm } from "../../../utils/algorithm";
 
 export default defineComponent({
-  name: 'sidebar',
+  name: "sidebar",
   components: { SidebarItem },
   setup() {
     const router = useRouter().options.routes;
+
     const store = useStore();
+
     const route = useRoute();
+
     const activeMenu = computed(() => {
       const { meta, path } = route;
       if (meta.activeMenu) {
@@ -40,9 +44,11 @@ export default defineComponent({
       }
       return path;
     });
+
     return {
       routes: computed(() => algorithm.increaseIndexes(router)),
       activeMenu,
+      isCollapse: computed(() => !store.getters.sidebar.opened),
     };
   },
 });
