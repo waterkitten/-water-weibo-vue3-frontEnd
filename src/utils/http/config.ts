@@ -11,7 +11,7 @@ export const defaultConfig: AxiosRequestConfig = {
     Accept: "application/json, text/plain, */*",
     "Content-Type": "application/json",
     "X-Requested-With": "XMLHttpRequest",
-    "Authorization":storageSession.getItem('info').accessToken?`Bearer ${storageSession.getItem('info').accessToken}`:'.....'
+    "Authorization":storageSession.getItem('info')?`Bearer ${storageSession.getItem('info').accessToken}`:null
   },
 }
 

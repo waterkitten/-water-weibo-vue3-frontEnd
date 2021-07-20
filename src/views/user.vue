@@ -48,7 +48,6 @@ interface userParms {
 }
 export default defineComponent({
   props: {},
-
   setup(props, ctx) {
     const reload = inject("reload");
     const state = reactive({
@@ -65,8 +64,6 @@ export default defineComponent({
       console.log(id);
       try {
         await deleteList(id);
-        // console.log(temp);
-        // console.log(reload);
         reload();
       } catch (error) {
         console.log(error);
@@ -74,7 +71,6 @@ export default defineComponent({
     };
     onMounted(() => {
       userArrList();
-
       console.log("userList", state.userArr);
     });
 
