@@ -35,7 +35,13 @@ const viteConfig: UserConfig = {
      */
     port: VITE_PORT,
     // 本地跨域代理
-    proxy: createProxy(VITE_PROXY)
+    proxy: {
+      '^/api':{
+        target:'http://testforcode.odpcldev.woa.com',
+        changeOrigin:true,
+        rewrite:path=>path.replace(/^\/api/,``)
+      }
+    }
   },
   plugins: [
     vue(),
