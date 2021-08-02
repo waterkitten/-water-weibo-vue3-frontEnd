@@ -20,6 +20,7 @@
         ></el-input>
       </el-form-item>
       <el-form-item>
+        <!-- 登录按钮 -->
         <el-button type="primary" @click.prevent="onBehavior">
           {{ tipsFalse }}
         </el-button>
@@ -99,6 +100,7 @@ export default defineComponent({
 
     // 点击登录或注册
     const onBehavior = (evt: Object): void => {
+      let ret = refreshVerify();
       vm.refs.ruleForm.validate((valid: Boolean) => {
         if (valid) {
           ctx.emit("onBehavior", evt);
