@@ -27,3 +27,7 @@ export const getUserList = (): any => {
 export const deleteList = (id:number): any => {
   return http.request("delete",`/deleteList/${id}`)
 }
+//防水墙验证码
+export const  getTxVerify = (data: object): any => {
+  return http.request("post", "/txCaptcha", data);
+};
